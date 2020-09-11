@@ -12,7 +12,7 @@ var notifications2Analyze=[];
 function checkStatus(){
   allRead = true;
   notifArr=notifications;
-  //analyzeStatus();
+  analyzeStatus();
   console.log(allRead);
   return 'status:checked';
 }
