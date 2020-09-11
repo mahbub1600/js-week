@@ -1,10 +1,25 @@
+notifications = [
+	{message: 'Lorem', read: true},
+{message: 'Ipsum', read: true},
+{message: 'Dolor', read: true},
+{message: 'Sit', read: false},
+{message: 'Amet', read: true}
+];
 
-  function customPrint(n, message){
-    //Add your code here
-    if(n){
-      console.log(message);
-      customPrint(n-1, message);    
-    }
-    return true;
+allRead = true;
+notifications2Analyze=[];
+
+function checkStatus(){
+  allRead = true;
+  notifArr=notifications;
+  analyzeStatus();
+  console.log(allRead);
+}
+function analyzeStatus() {
+  if(notifArr.length){
+    singleNot = notifArr.shift();
+    if(!obj.read) allRead = false;
+    analyzeStatus();
   }
-  customPrint(5, "Hello, World!");
+  return true;
+}
