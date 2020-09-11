@@ -1,4 +1,5 @@
-function customPrint(n, message) {
+<script>
+  function customPrint(n, message) {
   //  Add your code here
   if(n){
     document.write("Hello, World!");
@@ -8,3 +9,4 @@ function customPrint(n, message) {
 }
 
 customPrint(5, "Hello, World!");
+</script>
