@@ -18,7 +18,7 @@ function checkStatus(){
 function analyzeStatus() {
   if(notifArr.length){
     singleNot = notifArr.shift();
-    if(!obj.read) allRead = false;
+    if(!singleNot.read) allRead = false;
     analyzeStatus();
   }
   return true;
