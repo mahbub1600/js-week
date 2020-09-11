@@ -2,7 +2,7 @@ var notifications = [
 	{message: 'Lorem', read: true},
 	{message: 'Ipsum', read: true},
 	{message: 'Dolor', read: true},
-	{message: 'Sit', read: false},
+	{message: 'Sit', read: true},
 	{message: 'Amet', read: true}
 ];
 
@@ -13,8 +13,8 @@ function checkStatus(){
   allRead = true;
   notifArr=notifications;
   //analyzeStatus();
-  console.log('read');
   console.log(allRead);
+  return true;
 }
 function analyzeStatus() {
   if(notifArr.length){
