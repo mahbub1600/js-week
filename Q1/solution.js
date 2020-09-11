@@ -2,7 +2,7 @@
   function customPrint(n, message){
     //Add your code here
     if(n){
-      document.write(message+'\r');
+      console.log(message);
       customPrint(n-1, message);    
     }
     return true;
