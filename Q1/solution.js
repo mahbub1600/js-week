@@ -2,8 +2,8 @@
   function customPrint(n, message){
     //Add your code here
     if(n){
-      document.write("Hello, World!");
-      customPrint(n-1, "Hello, World!");    
+      document.write(message+"\n");
+      customPrint(n-1, message);    
     }
     return true;
   }
