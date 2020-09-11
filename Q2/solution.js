@@ -1,4 +1,4 @@
-notifications = [
+var notifications = [
 	{message: 'Lorem', read: true},
 {message: 'Ipsum', read: true},
 {message: 'Dolor', read: true},
@@ -6,8 +6,8 @@ notifications = [
 {message: 'Amet', read: true}
 ];
 
-allRead = true;
-notifications2Analyze=[];
+var allRead = true;
+var notifications2Analyze=[];
 
 function checkStatus(){
   allRead = true;
@@ -17,7 +17,7 @@ function checkStatus(){
 }
 function analyzeStatus() {
   if(notifArr.length){
-    singleNot = notifArr.shift();
+    var singleNot = notifArr.shift();
     if(!singleNot.read) allRead = false;
     analyzeStatus();
   }
