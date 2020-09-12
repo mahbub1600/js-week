@@ -1,3 +1,0 @@
-function categoryModal(){
-	return true;
-}
