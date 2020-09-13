@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap'
-import AddEditForm from '../Forms/AddEditForm'
+import PostAddEditForm from '../Forms/PostAddEditForm'
+//import CategoryModalForm from '../Modals/CategoryModal'
 
-class ModalForm extends Component {
+class PostModalForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -22,6 +23,7 @@ class ModalForm extends Component {
         const label = this.props.buttonLabel
 
         let button = ''
+        let catButton = ''
         let title = ''
 
         if(label === 'Edit'){
@@ -40,18 +42,19 @@ class ModalForm extends Component {
             title = 'Add New Item'
         }
 
-
         return (
             <div>
                 {button}
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle} close={closeBtn}>{title}</ModalHeader>
                     <ModalBody>
-                        <AddEditForm
+                        <PostAddEditForm
                             addItemToState={this.props.addItemToState}
                             updateState={this.props.updateState}
                             toggle={this.toggle}
-                            item={this.props.item} />
+                            item={this.props.item}
+                        />
+
                     </ModalBody>
                 </Modal>
             </div>
@@ -59,4 +62,4 @@ class ModalForm extends Component {
     }
 }
 
-export default ModalForm
+export default PostModalForm

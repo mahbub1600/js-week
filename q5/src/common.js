@@ -1,0 +1,1 @@
+module.exports = {postAutoIncrId:1, categoryAutoIncrId:1, savedPost:[], savedCategory:[]}

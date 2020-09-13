@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { Table, Button } from 'reactstrap';
-import ModalForm from '../Modals/Modal'
+import PostModalForm from '../Modals/PostModal'
 
-class DataTable extends Component {
+class PostTable extends Component {
 
     deleteItem = id => {
         let confirmDelete = window.confirm('Delete item forever?')
         if(confirmDelete){
-            fetch('http://localhost:3000/crud', {
+            /*fetch('http://localhost:3000/crud', {
                 method: 'delete',
                 headers: {
                     'Content-Type': 'application/json'
@@ -20,7 +20,8 @@ class DataTable extends Component {
                 .then(item => {
                     this.props.deleteItemFromState(id)
                 })
-                .catch(err => console.log(err))
+                .catch(err => console.log(err))*/
+            this.props.deleteItemFromState(id)
         }
 
     }
@@ -31,15 +32,11 @@ class DataTable extends Component {
             return (
                 <tr key={item.id}>
                     <th scope="row">{item.id}</th>
-                    <td>{item.first}</td>
-                    <td>{item.last}</td>
-                    <td>{item.email}</td>
-                    <td>{item.phone}</td>
-                    <td>{item.location}</td>
-                    <td>{item.hobby}</td>
+                    <td>{item.title}</td>
+                    <td>{item.category}</td>
                     <td>
                         <div style={{width:"110px"}}>
-                            <ModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
+                            <PostModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
                             {' '}
                             <Button color="danger" onClick={() => this.deleteItem(item.id)}>Del</Button>
                         </div>
@@ -53,12 +50,8 @@ class DataTable extends Component {
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>First</th>
-                    <th>Last</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Location</th>
-                    <th>Hobby</th>
+                    <th>Title</th>
+                    <th>Category</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -70,4 +63,4 @@ class DataTable extends Component {
     }
 }
 
-export default DataTable
+export default PostTable
